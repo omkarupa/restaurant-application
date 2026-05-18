@@ -1,4 +1,4 @@
-package com.op_solutions.menu_service;
+package com.op_solutions.menu_service.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
