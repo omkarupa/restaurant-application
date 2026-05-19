@@ -21,5 +21,18 @@ public class MenuService {
 		return repo.findByRestaurantId(restaurantId);
 	}
 	
+	public MenuItem addMenuItem(MenuItem menuItem)
+	{
+		if(restaurantService.fetchRestaurantById(menuItem.getRestaurant().getId()) == null)
+			throw new RuntimeException("Restaurant not found");
+		
+		return repo.save(menuItem);
+	}
+
+	public void saveAll(List<MenuItem> items) {
+		
+		repo.saveAll(items);
+		
+	}
 	
 }

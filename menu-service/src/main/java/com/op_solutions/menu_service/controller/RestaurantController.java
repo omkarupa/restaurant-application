@@ -1,5 +1,7 @@
 package com.op_solutions.menu_service.controller;
 
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,6 +24,12 @@ public class RestaurantController {
 	public ResponseEntity<Restaurant> getRestaurant(@PathVariable Long restaurantId)
 	{
 		return  ResponseEntity.ok(restaurantService.fetchRestaurantById(restaurantId));
+	}
+	
+	@GetMapping("")
+	public ResponseEntity<List<Restaurant>> getAllRestaurants()
+	{
+		return ResponseEntity.ok(restaurantService.fetchAllRestaurants());
 	}
 
 }

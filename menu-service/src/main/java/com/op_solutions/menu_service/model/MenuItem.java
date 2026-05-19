@@ -10,8 +10,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 public class MenuItem {
 	
 	@Id
@@ -26,6 +30,9 @@ public class MenuItem {
 	
 	@Column(name="is_available",nullable = false)
 	private boolean isAvailable = true;
+	
+	@Column(name="description",length = 500)
+	private String description;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "restaurant_id",nullable = false)

@@ -3,6 +3,8 @@ package com.op_solutions.menu_service.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -31,6 +33,7 @@ public class Restaurant {
 	@Column(name="is_active",nullable = false)
 	private boolean isActive;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "restaurant",cascade = CascadeType.ALL )
 	private List<MenuItem> menuItems = new ArrayList();
 
