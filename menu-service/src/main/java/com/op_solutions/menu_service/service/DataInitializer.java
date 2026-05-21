@@ -35,8 +35,8 @@ public class DataInitializer implements ApplicationRunner {
 
             Restaurant saved = restaurantService.addRestaurant(restaurant); // adapt method name if different
 
-            List<MenuItem> items = new ArrayList<>(150);
-            for (int i = 1; i <= 150; i++) {
+            List<MenuItem> items = new ArrayList<>(100000);
+            for (int i = 1; i <= 100000; i++) {
                 MenuItem item = new MenuItem();
                 item.setRestaurant(saved);
                 item.setName("Item " + i + " - " + name);
